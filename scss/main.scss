@@ -12,7 +12,22 @@ $font-weights: (
 
 body {
     background-color: $primary-color;
-    // Map application
-    font-weight: map-get($font-weights, bold);
     color: $text-color;
+}
+
+.main {
+    width: 80%;
+    margin-inline: auto;
+
+    // &__paragraph would compile to .main__paragraph { ... }
+    // #{&}__paragraph would take into account everything prior to the rule and compile to
+    // .main .main__paragraph { ... }
+    #{&}__paragraph {
+        // Map application
+        font-weight: map-get($font-weights, bold);
+
+        &:hover {
+            color: pink;
+        }
+    }
 }

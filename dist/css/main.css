@@ -1,6 +1,18 @@
 body {
   background-color: #272727;
-  font-weight: 900;
   color: #fff;
+}
+
+.main {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.main .main__paragraph {
+  font-weight: 900;
+}
+
+.main .main__paragraph:hover {
+  color: pink;
 }
 /*# sourceMappingURL=main.css.map */
