@@ -1,0 +1,17 @@
+1. Quick trick to apply an overlay to an image used as a background
+background: 
+    linear-gradient(
+        to right,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.3)
+    ),
+    url('...');
+
+2. Function that returns white or black color for text based on background-color
+@function set-text-color ($color) {
+    @if (lightness($color) > 40%) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}    
