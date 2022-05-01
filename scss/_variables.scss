@@ -2,3 +2,10 @@
 $primary-color: #272727;
 $accent-color: #ff652f;
 $text-color: #fff;
+// Example of a MAP, key - value pairs, access with map-get(map, key)
+$font-weights: (
+    "regular": 400,
+    "medium": 600,
+    "bold": 900
+);
+$mobile: 800px;

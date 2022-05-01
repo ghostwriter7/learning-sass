@@ -24,3 +24,7 @@ font-weight: map-get($font-weights, regular);
 }
 
 usage: font-weight: weight(bold);
+
+6. Mixins - reusable pieces of styles, can take arguments like functions 
+@Mixin flexCenter($direction) { flex-direction: $direction }
+Usage: @Include flexCenter(row);

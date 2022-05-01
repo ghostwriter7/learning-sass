@@ -3,16 +3,34 @@
 @import './variables';
 
 // Example of a function that utilizes a map
+// Functions should compute and return values
 @function weight($weight-name) {
     @return map-get($font-weights, $weight-name);
 }
 
-// Example of a MAP, key - value pairs, access with map-get(map, key)
-$font-weights: (
-    "regular": 400,
-    "medium": 600,
-    "bold": 900
-);
+// Mixin - reusable piece of code, helps duplicating code, use with @include
+// Mixins should define styles
+@mixin flexCenter($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+// Example of a theme mixin, can use @if statements in them
+@mixin theme($light-theme: true) {
+    @if $light-theme {
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+}
+
+// Example of a mixin wrapper around media query
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
 
 body {
     background-color: $primary-color;
@@ -20,6 +38,7 @@ body {
 }
 
 .main {
+    @include flexCenter(row);
     width: 80%;
     margin-inline: auto;
 
@@ -36,4 +55,12 @@ body {
             color: pink;
         }
     }
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.light {
+    @include theme(true);
 }
