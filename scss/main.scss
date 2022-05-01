@@ -1,7 +1,18 @@
+// Use $ to create scss variable
 $primary-color: #272727;
 $accent-color: #ff652f;
 $text-color: #fff;
 
+// Example of a MAP, key - value pairs, access with map-get(map, key)
+$font-weights: (
+    "regular": 400,
+    "medium": 600,
+    "bold": 900
+);
+
 body {
     background-color: $primary-color;
+    // Map application
+    font-weight: map-get($font-weights, bold);
+    color: $text-color;
 }
