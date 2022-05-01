@@ -45,7 +45,7 @@ body {
     // &__paragraph would compile to .main__paragraph { ... }
     // #{&}__paragraph would take into account everything prior to the rule and compile to
     // .main .main__paragraph { ... }
-    #{&}__paragraph {
+    #{&}__paragraph1 {
         // Map application
         // font-weight: map-get($font-weights, bold);
         // Simplified with a @function
@@ -53,6 +53,14 @@ body {
 
         &:hover {
             color: pink;
+        }
+    }
+
+    #{&}__paragraph2 {
+        @extend .main__paragraph1;
+
+        &:hover {
+            color: $accent-color;
         }
     }
 
