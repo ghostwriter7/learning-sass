@@ -2,6 +2,11 @@
 @import './resets';
 @import './variables';
 
+// Example of a function that utilizes a map
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
 // Example of a MAP, key - value pairs, access with map-get(map, key)
 $font-weights: (
     "regular": 400,
@@ -23,7 +28,9 @@ body {
     // .main .main__paragraph { ... }
     #{&}__paragraph {
         // Map application
-        font-weight: map-get($font-weights, bold);
+        // font-weight: map-get($font-weights, bold);
+        // Simplified with a @function
+        font-weight: weight(bold);
 
         &:hover {
             color: pink;

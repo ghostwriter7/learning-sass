@@ -17,3 +17,10 @@ font-weight: map-get($font-weights, regular);
     }
 
 4. Partials - @import './resets'
+
+5. Functions
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
+usage: font-weight: weight(bold);
