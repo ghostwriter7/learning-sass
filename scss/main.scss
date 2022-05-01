@@ -1,7 +1,6 @@
-// Use $ to create scss variable
-$primary-color: #272727;
-$accent-color: #ff652f;
-$text-color: #fff;
+// Example of importing a partial
+@import './resets';
+@import './variables';
 
 // Example of a MAP, key - value pairs, access with map-get(map, key)
 $font-weights: (

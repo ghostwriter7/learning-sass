@@ -1,0 +1,19 @@
+1. Variables - $primary-color
+
+2. Maps: 
+$font-weights: (
+    "regular": 400,
+    "bold": 700
+);
+
+font-weight: map-get($font-weights, regular);
+
+3. Nesting
+    .main {
+        &__paragraph { ... } // compiles to .main__paragraph only
+    }
+    .main {
+        #{&}__paragraph { ... } // takes into account everything prior to the rule
+    }
+
+4. Partials - @import './resets'
