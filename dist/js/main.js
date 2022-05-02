@@ -1,16 +1,13 @@
 const menuBtn = document.querySelector('.menu-btn');
 const hamburger = document.querySelector('.menu-btn__burger');
-
-let showMenu = false;
-
+const nav = document.querySelector('nav');
+const menuNav = document.querySelector('.menu-nav');
+const menuItems = document.querySelectorAll('.menu-nav__item');
 menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
-    if (!showMenu) {
-        hamburger.classList.add('open');
-        showMenu = true;
-    } else {
-        hamburger.classList.remove('open');
-        showMenu = false;
-    }
+    hamburger.classList.toggle('open');
+    nav.classList.toggle('open');
+    menuNav.classList.toggle('open');
+    menuItems.forEach(x => x.classList.toggle('open'));
 }

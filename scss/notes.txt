@@ -15,3 +15,17 @@ background:
         @return #fff;
     }
 }    
+
+3. CSS-only hamburger
+a) span + before and after (3 lines, lower shorter)
+b) class 'open', rotate 720 deg, make span transparent
+c) rotate before and after (45deg) + translate to create X
+
+4. CASE: Navlinks animated with translate, delay on each one:
+a) JS, forLoop and setTimeout 
+b) SCSS: in nth-child can't target $i variable directly, it must be wrapperd in #{} 
+@for $i from 1 through 4 {
+    .menu-nav__link:nth-child(#{$i}) {
+        transition-delay: $i * .1s;
+    }
+}
